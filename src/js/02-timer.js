@@ -23,8 +23,6 @@ const options = {
   },
 };
 
-flatpickr(input, options);
-
 function countdownTimer() {
   let countdown = new Date(input.value) - new Date();
   let reversTime = convertMs(countdown);
@@ -43,7 +41,7 @@ btnStart.addEventListener('click', () => {
   timerId = setInterval(() => {
     countdownTimer();
   }, 1000);
-  if (timerId) return (btnStart.disabled = true);
+  if (timerId) return (btnStart.disabled = true) && (input.disabled = true);
 });
 
 function convertMs(ms) {
@@ -70,3 +68,4 @@ function convertMs(ms) {
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
+flatpickr(input, options);
