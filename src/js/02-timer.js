@@ -41,7 +41,10 @@ btnStart.addEventListener('click', () => {
   timerId = setInterval(() => {
     countdownTimer();
   }, 1000);
-  if (timerId) return (btnStart.disabled = true) && (input.disabled = true);
+  if (timerId) {
+    (btnStart.disabled = true) && (input.disabled = true);
+    return;
+  }
 });
 
 function convertMs(ms) {
