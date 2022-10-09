@@ -42,7 +42,8 @@ btnStart.addEventListener('click', () => {
     countdownTimer();
   }, 1000);
   if (timerId) {
-    (btnStart.disabled = true) && (input.disabled = true);
+    btnStart.disabled = true;
+    input.disabled = true;
     return;
   }
 });
